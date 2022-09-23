@@ -1,11 +1,15 @@
-import React from "react";
-import "./style.css";
-
-export default function App() {
+import React from 'react';
+import Modal from './Modal';
+import Sidebar from './Sidebar';
+import Home from './Home';
+function App() {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <>
+      <Home />
+      <Modal />
+      <Sidebar />
+    </>
   );
 }
+
+export default App;
