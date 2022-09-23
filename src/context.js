@@ -3,30 +3,31 @@ import React, { useState, useContext } from 'react';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openSidebar = () => {
-    setIsSideBarOpen(true);
+    setIsSidebarOpen(true);
   };
   const closeSidebar = () => {
-    setIsSideBarOpen(true);
+    setIsSidebarOpen(false);
   };
+
   const openModal = () => {
     setIsModalOpen(true);
   };
   const closeModal = () => {
-    setIsModalOpen(true);
+    setIsModalOpen(false);
   };
 
   return (
     <AppContext.Provider
       value={{
+        isSidebarOpen,
         isModalOpen,
-        isSideBarOpen,
         openModal,
-        openSidebar,
         closeModal,
+        openSidebar,
         closeSidebar,
       }}
     >
@@ -35,7 +36,6 @@ const AppProvider = ({ children }) => {
   );
 };
 
-//custom hook
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
