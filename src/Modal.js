@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { useGlobalContext } from './context';
 const Modal = () => {
+  const {}
   return (
     <div className={`modal-overlay`}>
       <div className="modal-container">
